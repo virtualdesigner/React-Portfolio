@@ -1,0 +1,154 @@
+// Widescreen
+
+@include mediaMd {
+  body {
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 4rem;
+    }
+  }
+
+  .nav-box {
+    .nav-link-side,
+    .portrait-side {
+      float: none;
+      width: 100%;
+      min-height: 0;
+
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .nav-link-side {
+      height: 72vh;
+      transform: translate3d(100%, 0, 0);
+      font-size: 24px;
+    }
+
+    .portrait-side {
+      height: 28vh;
+      transform: translate3d(-100%, 0, 0);
+
+      .portrait {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+  /* About Page */
+
+  #about {
+    min-height: calc(100% - (158.9px) - 50px);
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 0;
+    padding-top: 10vh;
+
+    .lg-heading {
+      margin-left: 50px;
+    }
+
+    .about-main {
+      margin-top: 30px;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+
+      .about-pic-side {
+        margin-left: 0;
+        .about-pic {
+          height: 170px;
+          width: 170px;
+          border-radius: 50%;
+          border: 2px groove $secondary-color;
+        }
+
+        .about-name {
+          font-size: 1.6rem;
+          margin-top: 5px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .about-text-side {
+        display: flex;
+        margin: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 1.02rem;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  /* Common */
+
+  div#home {
+    min-height: calc(100% - 80px - 50px);
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  div#home h1 {
+    margin-top: 0;
+    font-size: 4rem;
+  }
+
+  .lg-heading {
+    font-size: 3.8rem;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+
+  /* About Page */
+
+  #about {
+    min-height: calc(100% - 128px - 70.6px - 50px);
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 0;
+    padding-top: 15vh;
+
+    .about-main {
+      margin-top: 12px;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+
+      .about-pic-side {
+        margin-left: 0;
+        .about-pic {
+          height: 150px;
+          width: 150px;
+          border-radius: 50%;
+          border: 2px groove $secondary-color;
+        }
+
+        .about-name {
+          font-size: 1.3rem;
+          margin-top: 5px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .about-text-side {
+        display: flex;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.01rem;
+        word-wrap: break-word;
+      }
+    }
+  }
+}

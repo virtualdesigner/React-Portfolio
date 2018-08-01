@@ -1,0 +1,304 @@
+@import "config";
+@import "menu";
+
+/* Basic CSS */
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+/* Homepage */
+#home {
+  min-height: calc(100% - 207.6px - 50px);
+  width: 100%;
+  padding: 4rem;
+
+  h1 {
+    margin-top: 20vh;
+  }
+
+  .icons {
+    a {
+      margin: 10px;
+    }
+  }
+}
+
+/* Common */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.6);
+  }
+}
+
+a {
+  color: set-text-color($primary-color);
+  text-decoration: none;
+  @include easeInOut;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+#nav {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+/* About Page */
+#about {
+  min-height: calc(100% - 128px - 70.6px - 50px);
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  padding-top: 15vh;
+  margin-left: 50px;
+
+  .about-main {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "img img text text"
+      "img-name img-name text text";
+
+    .about-pic-side {
+      display: flex;
+      flex-direction: column;
+      margin-left: 80px;
+
+      .about-pic {
+        grid-area: img;
+        height: 200px;
+        width: 200px;
+        background-image: url("../img/portrait.jpg");
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        border: 2px groove $secondary-color;
+      }
+
+      .about-name {
+        grid-area: img-name;
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+
+    .about-text-side {
+      grid-area: text;
+      display: flex;
+      align-items: center;
+      margin-left: 60px;
+      margin-right: 140px;
+      font-size: 1.2rem;
+      font-family: "Courgette", serif;
+    }
+  }
+}
+
+/* Projects Page */
+#projects {
+  min-height: calc(100% - (128px) + 48.4px - 50px);
+  width: 100%;
+
+  .lg-heading {
+    padding-top: 15vh;
+    margin-left: 50px;
+  }
+
+  .projects-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 80px;
+
+    .project {
+      margin-left: 25px;
+      margin-right: 25px;
+
+      margin-bottom: 40px;
+      height: fit-content;
+      @include easeInOut;
+
+      &:hover {
+        box-shadow: 6px 8px 50px 5px black;
+      }
+
+      &:nth-child(1) {
+        .project-back-pic {
+          background: url("../img/projects/programmerzclub.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: $secondary-color 1px solid;
+          height: 200px;
+          width: 200px;
+        }
+      }
+
+      &:nth-child(2) {
+        .project-back-pic {
+          background: url("../img/projects/wiki_leaks.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: $secondary-color 1px solid;
+          height: 200px;
+          width: 200px;
+        }
+      }
+      &:nth-child(3) {
+        .project-back-pic {
+          background: url("../img/projects/simon_game.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: $secondary-color 1px solid;
+          height: 200px;
+          width: 200px;
+        }
+      }
+      &:nth-child(4) {
+        .project-back-pic {
+          background: url("../img/projects/js_cal.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: $secondary-color 1px solid;
+          height: 200px;
+          width: 200px;
+        }
+      }
+      &:nth-child(5) {
+        .project-back-pic {
+          background: url("../img/projects/pomodoro_clock.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: $secondary-color 1px solid;
+          height: 200px;
+          width: 200px;
+        }
+      }
+      &:nth-child(6) {
+        .project-back-pic {
+          background: url("../img/projects/tic_tac_toe.png") no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: $secondary-color 1px solid;
+          height: 200px;
+          width: 200px;
+        }
+      }
+
+      &-link-box {
+        display: flex;
+        text-align: center;
+        border: #2a2a2a 2px groove;
+
+        .project-text-link {
+          color: $secondary-color;
+          background: #2a2a2a;
+          width: 100%;
+          height: 100%;
+          font-family: fantasy;
+          text-transform: uppercase;
+
+          &:hover {
+            color: #2a2a2a;
+            background: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Contact Page */
+
+#contact {
+  min-height: calc(100% - 80px - 50px);
+  .lg-heading {
+    padding-top: 20vh;
+    margin-left: 50px;
+  }
+
+  .contact-opts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 50px;
+
+    .contact-opt {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 40px;
+      padding: 20px;
+      border: #2a2a2a 2px ridge;
+      background-color: rgba($secondary-color, 0.7);
+      color: white;
+      font-family: cursive;
+      font-size: 20px;
+      @include easeInOut;
+    }
+
+    .email:hover {
+      background-color: $secondary-color;
+      color: #2a2a2a;
+    }
+
+    .address:hover {
+      background-color: $secondary-color;
+      color: #2a2a2a;
+    }
+
+    .phone-number:hover {
+      background-color: $secondary-color;
+      color: #2a2a2a;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: #2a2a2a;
+  margin-top: 50px;
+}
+
+@import "mobile";
